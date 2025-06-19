@@ -2,7 +2,7 @@
 
 ## Preface
 
-This book systematically transforms a vast collection of technical notes into a structured reference for engineers, architects, and developers. It delves into critical aspects of system architecture, network protocols, debugging, and design patterns, preserving the original depth, clarity, and real-world nuance. Designed for technical peers, it aims to be a practical guide for understanding complex systems and addressing real-world challenges.
+This book systematically delves into critical aspects of network protocols, communication layers , interaction points for data units and their real-world nuance. Designed for technical peers, it aims to be a practical guide for understanding complex systems and addressing real-world challenges.
 
 ## Table of Contents
 
@@ -126,7 +126,7 @@ When "multiple IPs are tagged to a single domain," it means that a domain name (
 
 Anycast and DNS-based routing do not work the same way, although they both help in directing traffic to the nearest or best-performing server.
 
-##### DNS-Based Routing (DNS Load Balancing)
+#### DNS-Based Routing (DNS Load Balancing)
 
 ✅ **How It Works:**
 
@@ -160,7 +160,7 @@ Each user might get different results based on location.
 * DNS resolution happens before a request is made, meaning it can't react dynamically to real-time congestion.
 * The client (browser) picks an IP and connects to it, which may not always be optimal.
 
-##### Anycast Routing (Network-Level Load Balancing)
+#### Anycast Routing (Network-Level Load Balancing)
 
 ✅ **How It Works:**
 
@@ -196,11 +196,6 @@ Each user might get different results based on location.
 | **Caching Issues**   | ✅ No DNS caching issues – users always hit the **nearest** and optimal node                            | ⚠️ DNS responses cached – can lead to **stale or suboptimal IPs**               |
 | **Use Cases**        | 🌐 Global APIs, DNS services, DDoS mitigation                                                          | 🖥️ Websites, CDNs, multi-region applications                                   |
 | **Examples**         | `8.8.8.8` (Google DNS), `1.1.1.1` (Cloudflare)                                                         | `google.com` resolving to multiple regional IPs                                 |
-
-🚀 Anycast = Same IP, served from multiple locations dynamically at the network level (BGP).
-🌍 DNS Routing = Different IPs based on rules like location, load balancing, and health checks.
-🔹 DNS-based routing happens before the request is made.
-🔹 Anycast happens dynamically during routing, ensuring real-time optimization.
 
 ### 1.2. MAC Addressing and Layer 2
 
@@ -534,7 +529,7 @@ This layered encapsulation/de-encapsulation workflow ensures modularity, interop
 
 **HTTPS Request Flow - Timeline Style**
 
-Here's how the flow can be represented in a timeline format, similar to how it appears in the Chrome Network tab. The timeline showcases sequential steps in HTTP request processing, including DNS resolution, connection setup, TLS handshake, and response phases.
+Here's how the flow can be represented in a timeline format. The timeline showcases sequential steps in HTTP request processing, including DNS resolution, connection setup, TLS handshake, and response phases.
 
 | Time (ms) | Action                                            | Description                                          |
 | :-------- | :------------------------------------------------ | :--------------------------------------------------- |
